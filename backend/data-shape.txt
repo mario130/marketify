@@ -1,0 +1,67 @@
+//products
+get
+ALL Products[]
+{
+  id: Number,
+  category: String, => // get dileveryImage accordingly
+  name: String,
+  price: Number,
+  quantity: Number,
+  rating: Number,
+  colorTypes: [
+    {
+      colorName: red,
+      imageUrl: string
+    },
+    {
+      colorName: blue,
+      imageUrl: string
+    },
+  ],
+  descriptions: [
+    {
+      title: string,
+      description: string
+    },
+    {
+      title: string,
+      description: string
+    }
+  ],
+  
+}
+id
+type
+name
+imageUrl
+price
+quantity
+rating
+
+
+post
+
+delete
+
+patch
+
+//users
+get
+All users
+id
+name
+email
+password
+cart: [
+  IProduct{}
+]
+address
+
+post
+Register
+
+delete
+Admin panel
+
+update
+for user & admin
