@@ -3,40 +3,34 @@ get
 ALL Products[]
 {
   id: Number,
-  category: String, => // get dileveryImage accordingly
+  category: String,  EX:seating - get dileveryImage accordingly
+  type: String,      EX:sofa
   name: String,
   price: Number,
-  quantity: Number,
+  quantity: Number, => max 10
   rating: Number,
-  colorTypes: [
+  variations: [ // was colorTypes
     {
-      colorName: red,
+      color: red,
       imageUrl: string
     },
     {
-      colorName: blue,
+      color: blue,
       imageUrl: string
     },
   ],
-  descriptions: [
+  description: {
+    title: String,
+    body: string
+  }
+  features: [
     {
       title: string,
-      description: string
+      description: string,
+      imageUrl: string
     },
-    {
-      title: string,
-      description: string
-    }
   ],
-  
 }
-id
-type
-name
-imageUrl
-price
-quantity
-rating
 
 
 post
