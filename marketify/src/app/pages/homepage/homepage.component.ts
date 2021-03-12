@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -15,7 +14,7 @@ export class HomepageComponent implements OnInit {
   {img:'../../../assets/images/component-accessories-2.webp',name:'Accessories'}
 ];
 showMore = false;
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -25,8 +24,5 @@ showMore = false;
   }
   prev() {
     this.showMore = false;
-  }
-  goToComponent(category){
-    this.router.navigate(['/products',{category:category}]);
   }
 }

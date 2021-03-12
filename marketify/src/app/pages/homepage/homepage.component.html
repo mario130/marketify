@@ -6,18 +6,15 @@
     </div>
   </div>
 </div>
-<div class="mainComponent py-5">
-  <div class="container">
-    <h2 class="text-center">Clever products for every corner</h2>
-    <div class="row">
-      <div class="component-conatainer" [class.translateX]="showMore">
-        <div class="component" *ngFor="let component of productsComponents" (click)="goToComponent(component.name)">
-          <img src="{{component.img}}" alt="">
-          <p>Shop {{component.name}}</p>
-        </div>
-      </div>
-      <div class="next" [class.hiden]="showMore" (click)="next()"><i class="fas fa-chevron-right"></i></div>
-      <div class="prev" [class.hiden]="!showMore" (click)="prev()"><i class="fas fa-chevron-left"></i></div>
+<div class="mainComponent">
+  <h2 class="text-center">Clever products for every corner</h2>
+  <div class="row">
+
+    <div class="component-conatainer" [class.translateX]="showMore">
+      <app-homepage-product *ngFor="let component of productsComponents" [component]="component"></app-homepage-product>
     </div>
+
+    <div class="next" [class.hiden]="showMore" (click)="next()"><i class="fas fa-chevron-right"></i></div>
+    <div class="prev" [class.hiden]="!showMore" (click)="prev()"><i class="fas fa-chevron-left"></i></div>
   </div>
 </div>

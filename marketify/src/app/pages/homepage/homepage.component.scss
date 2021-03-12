@@ -26,6 +26,14 @@
   }
 }
 .mainComponent {
+  padding: 50px 34px;
+
+  h2{
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #484543;
+  }
+
   .row {
     overflow-x: hidden;
     position: relative;
@@ -35,14 +43,6 @@
       transition: .5s all;
       &.translateX{
         transform: translateX(-43%);
-      }
-      .component {
-        flex: 1 0 27%;
-        margin: 10px;
-        cursor: pointer;
-        img{
-          max-width: 100%;
-        }
       }
     }
   }
