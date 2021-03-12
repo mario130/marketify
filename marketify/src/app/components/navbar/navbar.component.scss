@@ -46,7 +46,7 @@ nav{
 .nb-burger {
   cursor: pointer;
   padding: 10px 0;
-  z-index: 1;
+  z-index: 1002;
 
   div{
     background: #484543;
@@ -63,6 +63,7 @@ nav{
   right: 0;
   left: 0;
   background: #fff;
+  z-index: 1001;
 
   ul{
     height: 100vh;
