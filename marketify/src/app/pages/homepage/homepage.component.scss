@@ -1,33 +1,66 @@
 .slider{
-  background-image: url('../../../assets/images/homepage-silder.webp');
-  background-size: cover;
-  height: 100vh;
+  // background-image: url('../../../assets/images/homepage-silder.webp');
+  // background-size: 100% 100%;
+  // background-position: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  img{
+    position: relative;
+    max-width: 100%;
+    min-height: 530px;
+    z-index: 1;
+  }
   .container{
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 7%;
+    z-index: 2;
     & > div{
       text-align: center;
+      position: absolute;
+      right: 13%;
       div {
         background-color: #fcee71;
         color: #333;
         width: fit-content;
         padding: 10px 25px;
         margin: auto;
-        font-weight: bold;
+        font-weight: 500;
+        font-family: "GT America Burrow";        ;
+        cursor: pointer;
+        transition: .3s transform;
+        &:hover {
+          transform: translateY(-5px);
+        }
       }
     }
     h2 {
       color: white;
-      width: 500px;
-      font-size: 40px;
+      width: 384px;
+      font-size: 35px;
       font-weight: normal;
+      font-family: sans-serif;
       margin: 35px auto;
+    }
+  }
+  @media (max-width:768px){
+    &{
+      img {
+        object-fit: cover;
+        object-position: center center;
+      }
+      .container{
+        h2{
+          width: 239px;
+          font-size: 20px;
+        }
+      }
     }
   }
 }
 .mainComponent {
   padding: 50px 34px;
-
   h2{
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
@@ -42,7 +75,11 @@
       flex-wrap: nowrap;
       transition: .5s all;
       &.translateX{
-        transform: translateX(-43%);
+        transform: translateX(-54%);
+      }
+      app-homepage-product{
+        flex: 1 0 30%;
+        margin-right: 10px;
       }
     }
   }
@@ -69,5 +106,22 @@
     &.hiden{
       display: none;
     }
+  }
+  @media (max-width:425px) {
+    .row {
+      .component-conatainer{
+        &.translateX {
+          transform: translateX(-76%);
+        }
+      }
+    }
+  }
+}
+.range {
+  position: relative;
+  button{
+    position: absolute;
+    right: 100px;
+    bottom: 200px;
   }
 }
