@@ -1,1 +1,65 @@
-<p>navbar works!</p>
+<nav class="nb-mobile d-flex align-items-center justify-content-between">
+  <div class="nb-container d-flex align-items-center justify-content-between">
+
+    <div class="nb-burger d-block d-lg-none" [class.change]="isMobileNavOpen" (click)="onOpenCloseNav()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+    <div class="nb-sidebar" *ngIf="isMobileNavOpen">
+      <ul>
+        <li class="">
+          <a href="#" class="nav-link py-lg-4 mx-lg-4">Seating</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-lg-4 mx-lg-4">Storage</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-lg-4 mx-lg-4">Tables</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-lg-4 mx-lg-4">Rugs</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-lg-4 mx-lg-4">Accessories</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-lg-4 mx-lg-4">Lighting</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nb-brand">Marketify</div>
+    <div class="nb-links d-none d-lg-block">
+      <ul class="mb-0 p-0  d-none d-lg-block">
+        <li class="">
+          <a href="#" class="nav-link py-4 mx-4">Seating</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-4 mx-4">Storage</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-4 mx-4">Tables</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-4 mx-4">Rugs</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-4 mx-4">Accessories</a>
+        </li>
+        <li class="">
+          <a href="#" class="nav-link py-4 mx-4">Lighting</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nb-user">
+      <a href="#">
+        <i class="fas fa-user-alt"></i>
+      </a>
+      <a class="ml-2" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+    </div>
+  </div>
+</nav>
