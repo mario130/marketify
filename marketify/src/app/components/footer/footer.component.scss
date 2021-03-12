@@ -91,6 +91,12 @@
     }
     small{
       font-weight: 200;
+
+      &:first-of-type{
+        @media screen and (max-width: 670px) {
+          margin: 10px 0 5px;
+        }
+      }
     }
 
     .accordion{
@@ -102,6 +108,14 @@
           color: #f7eee3;
           outline: none;
         }
+      }
+    }
+
+    .copyright{
+      @media screen and (max-width: 670px) {
+        flex-direction: column;
+        text-align: center;
+
       }
     }
   }
