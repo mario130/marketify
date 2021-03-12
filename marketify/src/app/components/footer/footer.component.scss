@@ -1,0 +1,109 @@
+.footer{
+  background: #484543;
+  color: #f7eee3;
+  font-family: 'Poppins', sans-serif;
+
+  &__top{
+    padding: 3rem 2rem;
+    background: #514f4d;
+
+    @media screen and (max-width: 670px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    input{
+      width: 285px;
+      padding: 8px 20px;
+      border: 1px solid #f7eee3;
+      color: #f7eee3;
+      background: #484543;
+      outline: none;
+
+      @media screen and (max-width: 670px) {
+        width: 100%;
+        margin: 10px 0;
+        border: 1px solid #d1d0d0;
+      }
+    }
+
+    button{
+      padding: 8px 45px;
+      border: 1px solid #f7eee3;
+      color: #484543;
+
+      @media screen and (max-width: 670px) {
+        width: 100%;
+      }
+    }
+
+    .social{
+      @media screen and (max-width: 670px) {
+        order: -1;
+      }
+
+      span{
+        color: #fff;
+
+        &:not(:last-of-type){
+          margin-right: 1.375rem;
+        }
+      }
+    }
+  }
+
+
+  &__bottom{
+    padding: 3rem 2rem;
+
+
+    .lists{
+      @media screen and (max-width: 670px) {
+        display: none!important;
+      }
+    }
+
+    .accordion{
+      @media screen and (min-width: 670px) {
+        display: none!important;
+      }
+    }
+
+    ul{
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .list-header{
+      font-weight: bold;
+    }
+
+    li{
+      font-size: 0.875rem;
+
+      a{
+        color: #f7eee3;
+      }
+
+      &:not(:last-of-type){
+        margin-bottom: 10px;
+      }
+    }
+    small{
+      font-weight: 200;
+    }
+
+    .accordion{
+
+      .card{
+        background: #514f4d;
+
+        button{
+          color: #f7eee3;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
