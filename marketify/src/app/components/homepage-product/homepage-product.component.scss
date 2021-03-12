@@ -1,9 +1,9 @@
 .component {
-  flex: 1 0 27%;
+  width: 100%;
   margin: 10px;
   cursor: pointer;
   img{
-    width: 380px;
+    max-width: 100%;
   }
   p{
     font-weight: 600;
