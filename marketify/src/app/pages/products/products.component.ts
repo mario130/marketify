@@ -14,7 +14,6 @@ export class ProductsComponent implements OnInit {
     this.activeCategory.paramMap.subscribe((params: ParamMap) => {
       this.productCategory = params.get('category')
     })
-    console.log(this.productCategory)
   }
 
 }
