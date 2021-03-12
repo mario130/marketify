@@ -27,6 +27,6 @@ showMore = false;
     this.showMore = false;
   }
   goToComponent(category){
-    this.router.navigate(['/products',category]);
+    this.router.navigate(['/products',{category:category}]);
   }
 }
