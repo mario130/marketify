@@ -17,6 +17,7 @@ showMore = false;
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   next() {

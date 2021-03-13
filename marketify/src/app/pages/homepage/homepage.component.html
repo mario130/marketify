@@ -1,4 +1,4 @@
-<div class="slider">
+<div class="slider" id="slider">
   <img src="../../../assets/images/homepage-silder.webp" alt="">
   <div class="container">
     <div>
@@ -7,11 +7,11 @@
     </div>
   </div>
 </div>
-<div class="mainComponent">
+<div class="mainComponent" id="component">
   <h2 class="text-center">Clever products for every corner</h2>
   <div class="row">
 
-    <div class="component-conatainer" [class.translateX]="showMore">
+    <div class="component-conatainer" [class.translateX]="showMore" id="componentContainer">
       <app-homepage-product *ngFor="let component of productsComponents" [component]="component"></app-homepage-product>
     </div>
 
@@ -21,7 +21,23 @@
 </div>
 <div class="range py-5">
   <video autoplay loop width="100%">
-    <source src="../../../assets/video/Desktop-HP-Range-Video-1280x640.mp4">
+    <source src="../../../assets/video/Desktop-HP-Range-Video-1280x640.mp4" type="video/mp4">
+      YOUR browser not support video
   </video>
   <button class="btn btn-secondary">FIND YOUR RANGE</button>
+</div>
+<div class="py-5 offer">
+  <div class="container-fluid px-5">
+    <div class="row align-items-center">
+      <div class="col-9 pr-3">
+        <img src="../../../assets/images/Desktop-HP-Range-vs-Nomad.webp" alt="" class="w-100 pr-5">
+      </div>
+      <div class="col-3">
+        <h2>Two collections, no competition</h2>
+        <p>One is contemporary. One is classic. Both are beautiful in their own right. Learn about the shared innovation that puts them lightyears ahead of anything else on the market — and discover the details that make them different.
+        </p>
+        <button class="btn">Compare collections →</button>
+      </div>
+    </div>
+  </div>
 </div>
