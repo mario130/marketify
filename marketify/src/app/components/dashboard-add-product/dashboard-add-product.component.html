@@ -190,16 +190,18 @@
         </button>
       </div>
       <div class="modal-body">
-        <ul>
-          <li *ngFor="let product of allProducts" class="d-flex justify-content-between mb-2">
-            <a>{{product.name}}</a>
-            <button (click)="deleteProduct(product)" class="btn btn-danger">Delete</button>
+        <ul class="pl-0">
+          <li *ngFor="let product of allProducts" class="d-flex justify-content-between mb-2 align-items-center">
+            <a>{{product.name}} - {{product.category}}</a>
+            <div>
+              <!-- <button (click)="editProduct(product)" class="btn btn-primary">Edit</button> -->
+              <button (click)="deleteProduct(product)" class="btn btn-danger ml-2">Delete</button>
+            </div>
           </li>
         </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

@@ -37,13 +37,14 @@ nav{
     color: #fff;
   }
   .bar1{
-    transform: rotate(-45deg) translate(-9px, 6px);
+    // transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-2px, 3px);
   }
   .bar2{
     opacity: 0;
   }
   .bar3{
-    transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
   }
 }
 
@@ -54,9 +55,9 @@ nav{
 
   div{
     background: #484543;
-    width: 35px;
-    height: 5px;
-    margin: 6px 0;
+    width: 28px;
+    height: 3px;
+    margin: 4px 0;
   }
 }
 

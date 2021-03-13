@@ -71,4 +71,8 @@ export class DashboardAddProductComponent implements OnInit {
   deleteProduct(product){
     this.productService.deleteProduct(product)
   }
+  editProduct(product){
+    console.log('Not implemented yet..');
+    console.log('product to be edited:',product);
+  }
 }

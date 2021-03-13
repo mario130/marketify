@@ -25,7 +25,7 @@ export class ProductService {
   }
 
   addProduct(newProd){
-    this.http.post(this.url+'create', newProd).subscribe(
+    this.http.post(this.url+'/create', newProd).subscribe(
       (response)=>{
         console.log(response);
         this.allProducts.push(newProd)
@@ -36,7 +36,6 @@ export class ProductService {
 
   deleteProduct(product){
     this.http.delete(`${this.url}/${product._id}/delete`).subscribe(
-    // this.http.delete(this.url+product._id+'delete').subscribe(
       (response)=>{
         console.log(response);
         this.allProducts = this.allProducts.filter(
