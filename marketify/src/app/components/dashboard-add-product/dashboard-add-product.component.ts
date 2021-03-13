@@ -20,51 +20,40 @@ export class DashboardAddProductComponent implements OnInit {
     type:['',[Validators.required]],
     price:['',[Validators.required]],
 
-    variations:this.fb.group({
-      color:[''],
-      imageUrl:[''],
-    }),
-
-    otherVariations: this.fb.array([]),
+    variations:this.fb.array([]),
 
     description: this.fb.group({
       title: [''],
       body: ['']
     }),
 
-    features: this.fb.group({
-      title:[''] ,
-      description:[''] ,
-      imageUrl:['']
-    }),
-
-    otherFeatures: this.fb.array([])
+    features: this.fb.array([]),
   });
 
-  get otherVariations(){
-    return this.addProductForm.get('otherVariations') as FormArray;
+  get variations(){
+    return this.addProductForm.get('variations') as FormArray;
   }
-  get otherFeatures(){
-    return this.addProductForm.get('otherFeatures') as FormArray;
+  get features(){
+    return this.addProductForm.get('features') as FormArray;
   }
   addAnotherVariation(){
-    this.otherVariations.push(this.fb.group({
+    this.variations.push(this.fb.group({
       color: '',
       imageUrl: ''
     }))
   }
   addAnotherFeature(){
-    this.otherFeatures.push(this.fb.group({
+    this.features.push(this.fb.group({
       title: '',
       description: '',
       imageUrl: '',
     }))
   }
   removeVariation(i){
-    this.otherVariations.removeAt(i);
+    this.variations.removeAt(i);
   }
   removeFeature(i){
-    this.otherFeatures.removeAt(i);
+    this.features.removeAt(i);
   }
   saveProduct(){
     console.log(this.addProductForm.value);
