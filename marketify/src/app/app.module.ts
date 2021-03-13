@@ -9,6 +9,8 @@ import { ProductsComponent } from './pages/products/products.component';
 import { HomepageProductComponent } from './components/homepage-product/homepage-product.component';
 import { ProductComponent } from './components/product/product.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DashboardAddProductComponent } from './components/dashboard-add-product/dashboard-add-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductsComponent,
     HomepageProductComponent,
     ProductComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardAddProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

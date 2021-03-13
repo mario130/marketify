@@ -1,0 +1,140 @@
+<!-- Modal -->
+<div class="modal fade" id="createProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a new product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="addProductForm" (ngSubmit)="saveProduct()">
+        <div class="modal-body">
+
+          {{addProductForm.value | json}}
+          <div class="form-group">
+            <label class="mb-0">Name: </label><br>
+            <input class="form-control" type="text" name="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label class="mb-0">Category: </label><br>
+            <input class="form-control" type="text" name="category" formControlName="category">
+          </div>
+          <div class="form-group">
+            <label class="mb-0">Type: </label><br>
+            <input class="form-control" type="text" name="type" formControlName="type">
+          </div>
+          <div class="form-group">
+            <label class="mb-0">Price: </label><br>
+            <input class="form-control" type="text" name="price" formControlName="price">
+          </div>
+
+          <!-- Main variation -->
+          <div formGroupName="variations">
+
+            <label>Variations:</label>
+            <div class="form-group">
+              <label class="mb-0">Color: </label><br>
+              <input class="form-control" type="text" name="color" formControlName="color">
+            </div>
+            <div class="form-group">
+              <label class="mb-0">imageUrl: </label><br>
+              <input class="form-control" type="text" name="imageUrl" formControlName="imageUrl">
+            </div>
+
+          </div>
+
+          <!-- Other variations -->
+          <button type="button" class="btn btn-secondary btn-sm mb-3" (click)="addAnotherVariation()">Add another variation</button>
+
+          <div formArrayName="otherVariations" *ngFor="let variation of otherVariations.controls; let i=index">
+
+            <div [formGroupName]="i">
+              <label>variation {{i+2}}</label>
+              <div class="form-group">
+                <label class="mb-0">Color: </label><br>
+                <input class="form-control" type="text" name="color" formControlName="color">
+              </div>
+              <div class="form-group">
+                <label class="mb-0">imageUrl: </label><br>
+                <input class="form-control" type="text" name="imageUrl" formControlName="imageUrl">
+              </div>
+              <button class="btn btn-primary mb-3" (click)="removeVariation(i)">Remove this variation</button>
+            </div>
+
+          </div>
+
+          <!-- description -->
+          <br><label>Description: </label>
+          <div formGroupName="description">
+            <div class="form-group">
+              <label class="mb-0">title: </label><br>
+              <input class="form-control" type="text" name="title" formControlName="title">
+            </div>
+            <div class="form-group">
+              <label class="mb-0">body: </label><br>
+              <input class="form-control" type="text" name="body" formControlName="body">
+            </div>
+          </div>
+
+
+
+
+
+          <!-- Main feature -->
+          <div formGroupName="features">
+
+            <label>Features:</label>
+            <div class="form-group">
+              <label class="mb-0">title: </label><br>
+              <input class="form-control" type="text" name="title" formControlName="title">
+            </div>
+            <div class="form-group">
+              <label class="mb-0">description: </label><br>
+              <input class="form-control" type="text" name="description" formControlName="description">
+            </div>
+            <div class="form-group">
+              <label class="mb-0">imageUrl: </label><br>
+              <input class="form-control" type="text" name="imageUrl" formControlName="imageUrl">
+            </div>
+
+          </div>
+
+          <!-- Other features -->
+          <button type="button" class="btn btn-secondary btn-sm mb-3" (click)="addAnotherFeature()">Add another feature</button>
+
+          <div formArrayName="otherFeatures" *ngFor="let feature of otherFeatures.controls; let i=index">
+
+            <div [formGroupName]="i">
+              <label>Feature {{i+2}}</label>
+              <div class="form-group">
+                <label class="mb-0">title: </label><br>
+                <input class="form-control" type="text" name="title" formControlName="title">
+              </div>
+              <div class="form-group">
+                <label class="mb-0">description: </label><br>
+                <input class="form-control" type="text" name="description" formControlName="description">
+              </div>
+              <div class="form-group">
+                <label class="mb-0">imageUrl: </label><br>
+                <input class="form-control" type="text" name="imageUrl" formControlName="imageUrl">
+              </div>
+              <button class="btn btn-primary mb-3" (click)="removefeature(i)">Remove this variation</button>
+            </div>
+
+          </div>
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
