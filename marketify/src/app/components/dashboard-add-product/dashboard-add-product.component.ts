@@ -66,6 +66,7 @@ export class DashboardAddProductComponent implements OnInit {
     this.features.removeAt(i);
   }
   saveProduct(){
-    console.log(this.addProductForm.value);
+    this.productService.addProduct(this.addProductForm.value)
+    // console.log(this.addProductForm.value);
   }
 }
