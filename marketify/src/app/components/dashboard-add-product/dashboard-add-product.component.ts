@@ -67,6 +67,8 @@ export class DashboardAddProductComponent implements OnInit {
   }
   saveProduct(){
     this.productService.addProduct(this.addProductForm.value)
-    // console.log(this.addProductForm.value);
+  }
+  deleteProduct(product){
+    this.productService.deleteProduct(product)
   }
 }

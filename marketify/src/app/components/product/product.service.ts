@@ -34,4 +34,17 @@ export class ProductService {
     )
   }
 
+  deleteProduct(product){
+    this.http.delete(`${this.url}/${product._id}/delete`).subscribe(
+    // this.http.delete(this.url+product._id+'delete').subscribe(
+      (response)=>{
+        console.log(response);
+        this.allProducts = this.allProducts.filter(
+          item => item !== product
+        )
+        this.productsFetched.next(this.allProducts)
+      }
+    )
+  }
+
 }
