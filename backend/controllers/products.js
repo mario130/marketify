@@ -29,7 +29,10 @@ Router.get('/:id?', (req, res)=>{ // (:) means it's dynamic - (?) means it might
         if (data === null){
           return res.send('No products yet')
         }
-        return res.status(200).send(data)
+        return res.status(200).json({
+          message: "Products received!",
+          products: data
+        })
       }
     })
   }
