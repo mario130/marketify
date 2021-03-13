@@ -16,16 +16,10 @@ export class ProductService {
   constructor(private http:HttpClient) { }
 
   fetchProds(){
-    this.http.get(this.url+'products').subscribe(
+    this.http.get<{message: string, products: IProduct[]}>(this.url+'products').subscribe(
       (resp)=> {
-        this.allProducts = resp
+        this.allProducts = resp.products
         this.productsFetched.next(this.allProducts)
-        resp.allProds.forEach((categ, i) => { // Get categories dynamically
-          this.CategoryList.push({
-            id: i+1,
-            name: categ.categ
-          })
-        })
       }
     )
   }

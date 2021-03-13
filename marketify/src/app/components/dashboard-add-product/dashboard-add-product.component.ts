@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { IProduct } from 'src/app/shared/products';
+import { ProductService } from '../product/product.service';
 
 @Component({
   selector: 'app-dashboard-add-product',
@@ -8,9 +10,17 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 })
 export class DashboardAddProductComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  allProducts: IProduct[]
+
+  constructor(private fb: FormBuilder, private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.fetchProds()
+    this.productService.productsFetched.subscribe(
+      (allProds: IProduct[]) => {
+        this.allProducts = allProds
+      }
+    )
   }
 
 
