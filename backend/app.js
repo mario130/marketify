@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const productsRoutes = require('./controllers/products');
 const usersRoutes=require('./controllers/users');
@@ -18,4 +19,4 @@ mongoose.connect('mongodb+srv://mario:H70GQjtWuTvrb01Z@cluster0.4o2yk.mongodb.ne
 app.use('/api/products', productsRoutes)
 app.use('/api/users', usersRoutes)
 
-app.listen(PORT, ()=>console.log(`Now listening on port ${PORT}`))
+app.listen(process.env.PORT || PORT, ()=>console.log('Now listening...'))
