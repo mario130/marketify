@@ -16,7 +16,7 @@ export class HomepageProductComponent implements OnInit {
   }
 
   goToComponent(category){
-    this.router.navigate(['/products',{category:category}]);
+    this.router.navigate(['/category',{category:category}]);
   }
 
 }
