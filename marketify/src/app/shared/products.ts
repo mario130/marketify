@@ -3,7 +3,8 @@ export interface IProduct {
   category:string,
   type:string,
   price:number,
-  variations:Array<string>,
+  variations:{color: string, imageUrl: string}[],
   rating:number,
-  description:object
+  description:{title: string, body: string},
+  features:{title: string, description: string, imageUrl: string}[]
 }
