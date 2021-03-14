@@ -56,6 +56,30 @@
     }
   }
 }
+.next,
+.prev {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: #fff;
+  line-height: 40px;
+  top: 38%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.next{
+  right: 20px;
+  &.hiden{
+    display: none;
+  }
+}
+.prev {
+  left: 20px;
+  &.hiden{
+    display: none;
+  }
+}
 .mainComponent {
   padding: 50px 34px;
   color: #484543;
@@ -126,6 +150,10 @@
 }
 .offer {
   color: #484543;
+  font-size: 1.5vw;
+  h2 {
+    font-size: 2.3vw;
+  }
   .col-3 {
     line-height: 1.5;
   }
@@ -136,6 +164,61 @@
     color: #484543;
     &:hover {
       transform: translateY(-5px);
+    }
+  }
+}
+.weekly-product{
+  padding: 20px 50px;
+  .row{
+    position: relative;
+    overflow-x: hidden;
+  }
+  .product-conatiner{
+    display: flex;
+    flex-wrap: nowrap;
+    transition: .5s all;
+    width: 100%;
+    &.translateX{
+      transform: translateX(-54%);
+    }
+    .product{
+      width: 27%;
+      margin-right: 10px;
+      img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 5px;
+      }
+      li{
+        display: inline-block;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-block;
+        border: 1px solid #ccc;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          width: 26px;
+          height: 26px;
+          border: 1px solid #333;
+          border-radius: 50%;
+          opacity: 0;
+        }
+        &:hover,
+          &.active{
+            &::after{
+              opacity: 1;
+            }
+          }
+      }
     }
   }
 }
