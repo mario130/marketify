@@ -16,9 +16,13 @@ export class HomepageComponent implements OnInit {
 sofaList = [
   {name:'Range 3-pice',price:1925,color:['#a3a2a1','#474543','#3a4b66'],img:['../../../assets/images/products/range-3-piece.webp','../../../assets/images/products/range-3-piece-2.webp',
   '../../../assets/images/products/range-3-piece-3.webp']},
+  {name:'Nomad Sofa Sectional',price:1395,color:['#fff','#8b3b35','#a3a2a1','#3a4b66','#484543'],img:['../../../assets/images/products/Nomad-Sofa-Sectional.webp','../../../assets/images/products/Nomad-Sofa-Sectional-2.webp','../../../assets/images/products/Nomad-Sofa-Sectional-3.webp','../../../assets/images/products/Nomad-Sofa-Sectional-4.webp','../../../assets/images/products/Nomad-Sofa-Sectional-5.webp']},
+  {name:'Nomad Sofa Sectional',price:1395,color:['#fff','#8b3b35','#a3a2a1','#3a4b66','#484543'],img:['../../../assets/images/products/Nomad-Sofa-Sectional.webp','../../../assets/images/products/Nomad-Sofa-Sectional-2.webp','../../../assets/images/products/Nomad-Sofa-Sectional-3.webp','../../../assets/images/products/Nomad-Sofa-Sectional-4.webp','../../../assets/images/products/Nomad-Sofa-Sectional-5.webp']},
+  {name:'Nomad Sofa Sectional',price:1395,color:['#fff','#8b3b35','#a3a2a1','#3a4b66','#484543'],img:['../../../assets/images/products/Nomad-Sofa-Sectional.webp','../../../assets/images/products/Nomad-Sofa-Sectional-2.webp','../../../assets/images/products/Nomad-Sofa-Sectional-3.webp','../../../assets/images/products/Nomad-Sofa-Sectional-4.webp','../../../assets/images/products/Nomad-Sofa-Sectional-5.webp']},
   {name:'Nomad Sofa Sectional',price:1395,color:['#fff','#8b3b35','#a3a2a1','#3a4b66','#484543'],img:['../../../assets/images/products/Nomad-Sofa-Sectional.webp','../../../assets/images/products/Nomad-Sofa-Sectional-2.webp','../../../assets/images/products/Nomad-Sofa-Sectional-3.webp','../../../assets/images/products/Nomad-Sofa-Sectional-4.webp','../../../assets/images/products/Nomad-Sofa-Sectional-5.webp']}
 ]
 showMore = false;
+showMoreProduct = false;
 isActive = 0;
   constructor() { }
 
@@ -31,6 +35,12 @@ isActive = 0;
   }
   prev() {
     this.showMore = false;
+  }
+  nextProduct(){
+    this.showMoreProduct = true;
+  }
+  prevProduct(){
+    this.showMoreProduct = false;
   }
   changeColor(colors,indexColor,indexSofa){
     for (var i = 0; i < colors.parentElement.children.length; i++){

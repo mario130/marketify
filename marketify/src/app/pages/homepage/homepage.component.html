@@ -44,7 +44,7 @@
 
 <div class="weekly-product" id="weekly">
   <div class="row">
-    <div class="product-conatiner">
+    <div class="product-conatiner" [class.translateX]="showMoreProduct">
       <div class="product" *ngFor="let sofa of sofaList index as i">
       <img src="{{sofa.img[0]}}" alt="">
       <ul>
@@ -53,5 +53,7 @@
       <p>{{sofa.name}}</p>
       </div>
     </div>
+    <div class="next" [class.hiden]="showMoreProduct" (click)="nextProduct()"><i class="fas fa-chevron-right"></i></div>
+    <div class="prev" [class.hiden]="!showMoreProduct" (click)="prevProduct()"><i class="fas fa-chevron-left"></i></div>
   </div>
 </div>
