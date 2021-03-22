@@ -1,4 +1,4 @@
-<div class="slider" id="slider">
+<div class="slider" >
   <img src="../../../assets/images/homepage-silder.webp" alt="">
   <div class="container">
     <div>
@@ -7,11 +7,11 @@
     </div>
   </div>
 </div>
-<div class="mainComponent" id="component">
+<div class="mainComponent">
   <h2 class="text-center">Clever products for every corner</h2>
   <div class="row">
 
-    <div class="component-conatainer" [class.translateX]="showMore" id="componentContainer">
+    <div class="component-conatainer" [class.translateX]="showMore">
       <app-homepage-product *ngFor="let component of productsComponents" [component]="component"></app-homepage-product>
     </div>
 
@@ -20,9 +20,9 @@
   </div>
 </div>
 <div class="range py-5">
-  <video autoplay loop width="100%">
+  <video loop playsinline muted preload="auto" width="100%">
     <source src="../../../assets/video/Desktop-HP-Range-Video-1280x640.mp4" type="video/mp4">
-      YOUR browser not support video
+      Your browser does not support the video tag.
   </video>
   <button class="btn btn-secondary">FIND YOUR RANGE</button>
 </div>
@@ -39,5 +39,21 @@
         <button class="btn">Compare collections →</button>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="weekly-product" id="weekly">
+  <div class="row">
+    <div class="product-conatiner" [class.translateX]="showMoreProduct">
+      <div class="product" *ngFor="let sofa of sofaList index as i">
+      <img src="{{sofa.img[0]}}" alt="">
+      <ul>
+        <li *ngFor="let color of sofa.color index as x" [ngStyle]="{backgroundColor:color}" #colors (click)="changeColor(colors,x,i)"></li>
+      </ul>
+      <p>{{sofa.name}}</p>
+      </div>
+    </div>
+    <div class="next" [class.hiden]="showMoreProduct" (click)="nextProduct()"><i class="fas fa-chevron-right"></i></div>
+    <div class="prev" [class.hiden]="!showMoreProduct" (click)="prevProduct()"><i class="fas fa-chevron-left"></i></div>
   </div>
 </div>
