@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
   productsComponents = [
-  {img:'../../../assets/images/image-component-table.webp',name:'Tables'},
+  {img:'../../../assets/images/image-component-table.webp',name:'Tables and Sofas'},
   {img:'../../../assets/images/component-credenzas.webp',name:'Credenzas'},
-  {img:'../../../assets/images/component-shelves.webp',name:'Shelves'},
+  {img:'../../../assets/images/component-shelves.webp',name:'Shelves and Storage'},
   {img:'../../../assets/images/component-rugs-3.webp',name:'Rugs'},
   {img:'../../../assets/images/component-accessories-2.webp',name:'Accessories'}
 ];

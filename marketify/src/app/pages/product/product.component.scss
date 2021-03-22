@@ -1,0 +1,44 @@
+.prod{
+  font-family: 'Poppins', sans-serif;
+
+  .prod-img{
+    max-width: 100%;
+  }
+  .right-part{
+    color: #484543;
+
+    .title{
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+    .price{
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+    }
+  }
+
+  .about{
+
+    &-title{
+      font-size: 1.3rem;
+    }
+    &-body{
+      font-weight: 300;
+    }
+  }
+
+  .product-feature{
+    img{
+      max-width: 100%;
+    }
+  }
+
+  .product-footer{
+    p{
+      font-weight: 300;
+    }
+    img{
+      max-width: 100%;
+    }
+  }
+}

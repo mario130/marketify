@@ -3,30 +3,15 @@
 
   <section class="hero-plp">
       <div class="hero-plp-header-wrapper">
-          <h2 >Shelves and Storage</h2>
+          <h2>{{productCategory}}</h2>
       </div>
-      <p class="wrap">Modern living demands more out of our spaces — or sometimes, just more space. Which is why a little
-          storage ingenuity goes a long way. From our stylish Index wall shelving system to our versatile credenzas, we’re
-          always figuring out how to design beautiful, useful ways to keep everything in its place.</p>
+      <p class="wrap">{{productCategoryDescription}}</p>
   </section>
 
-  <!-- <div class="row">
-      <div class="col-md-12">
-          <span class="anchor-copy">Jump to:</span>
-          <a class="selector" href="#Credenzas">Credenzas &amp; Media Storage</a>
-          <a class="selector" href="#Carts">Carts &amp; Trays </a>
-          <a class="selector" href="#Wall" >Wall Shelves</a>
-      </div>
-  </div> -->
-
   <div class="row mt-2">
-
-      <div class="col-md-12"> <h3>Credenzas &amp; Media Storage</h3></div>
-
-      <div class="col-md-4" *ngFor="let pro of product">
+      <div class="col-md-4" *ngFor="let pro of productsToDisplay">
           <app-category-products [pro]="pro"></app-category-products>
       </div>
-
   </div>
 
 

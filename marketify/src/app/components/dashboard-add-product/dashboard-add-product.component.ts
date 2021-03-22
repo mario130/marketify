@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IProduct } from 'src/app/shared/products';
-import { ProductService } from '../product/product.service';
+import { ProductService } from '../../pages/product/product.service';
 
 @Component({
   selector: 'app-dashboard-add-product',

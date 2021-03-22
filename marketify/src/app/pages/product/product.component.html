@@ -1,0 +1,55 @@
+<div class="container-fluid prod">
+  <p class="ml-3">{{currentProduct.category}}</p>
+  <div class="row my-3">
+    <div class="col-md-8">
+      <img [src]="currentProduct.variations[0].imageUrl" alt="" class="prod-img">
+    </div>
+    <div class="col-md-4 right-part">
+      <div class="title mt-2 mb-4">{{currentProduct.name}}</div>
+      <div class="price mb-3">${{currentProduct.price}}</div>
+      <p>Color: {{currentProduct.variations[0].color}}</p>
+      <button class="btn btn-warning btn-block">Add to cart</button>
+    </div>
+
+    <div class="container">
+      <div class="about my-5">
+        <div class="about-title mb-4">
+          {{currentProduct.description.title}}
+        </div>
+        <div class="about-body">
+          {{currentProduct.description.body}}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="product-feature my-3">
+       <div class="row align-items-center">
+        <div class="col-lg-6">
+          <img [src]="currentProduct.features[0].imageUrl" alt="">
+        </div>
+        <div class="col-lg-6">
+          <h4 class="mb-4">{{currentProduct.features[0].title}}</h4>
+          <p>{{currentProduct.features[0].description}}</p>
+        </div>
+       </div>
+      </div>
+    </div>
+
+
+    <div class="container mt-4">
+      <div class="product-footer mt-3">
+       <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h4 class="mb-4">Every single order includes fast, free shipping</h4>
+          <p>Just like everything else we make, lamps and light fixtures are delivered directly to your door, for free. There are no minimums, no fine print, and no premiums for rush delivery — just a simple promise to get your stuff to your home as soon as possible, without any unexpected fees.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="../../../assets/images/Shipping Image.webp" alt="">
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
