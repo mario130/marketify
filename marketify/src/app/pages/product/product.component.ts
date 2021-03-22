@@ -23,7 +23,8 @@ export class ProductComponent implements OnInit {
       (allProds: IProduct[]) => {
         this.currentProduct = allProds.find(prod => prod._id === this.prodId)
       }
-    )
+      )
+      this.prodService.fetchProds()
   }
 
 }
