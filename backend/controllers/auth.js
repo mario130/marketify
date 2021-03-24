@@ -24,7 +24,14 @@ Router.post('/register', async(req, res) => {
     password: hashedPassword
   })
 
-  newUser.save().then((data)=>res.send({newUserId: data._id})).catch(err=> res.send(err))
+  newUser.save().then((data)=>res.json({
+    "status": "success",
+    "user": {
+      email: emailExists.email,
+      _id: emailExists._id,
+      token: token
+    }
+  })).catch(err=> res.send(err))
 })
 
 Router.post('/login', async (req, res) => {
@@ -47,7 +54,12 @@ Router.post('/login', async (req, res) => {
   // create jwt
   const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET)
   return res.header('auth-token', token).json({
-    "status": "success" 
+    "status": "success",
+    "user": {
+      email: user.email,
+      _id: user._id,
+      token: token
+    }
   })
 })
 
