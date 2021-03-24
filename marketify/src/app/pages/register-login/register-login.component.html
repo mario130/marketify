@@ -1,0 +1,38 @@
+<div class="row m-0 p-0">
+  <div class="register part col-lg-6">
+    <h4 class="mb-0">I'm new here</h4>
+    <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="First Name*" required ngModel name="fName">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Last Name*" required ngModel name="lName">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email address*" required email ngModel name="email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password*" required ngModel name="pw" minlength="6">
+      </div>
+      <button class="btn btn-dark btn-block" [disabled]="!registerForm.valid">Create an account</button>
+      <div *ngIf="errorMsgRegister" class="mt-4 alert alert-danger" role="alert">
+        {{errorMsgRegister}}
+      </div>
+    </form>
+  </div>
+  <div class="login part col-lg-6">
+    <h4>Welcome back</h4>
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email address*" required email ngModel name="emailLogin">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password*" required ngModel name="pwLogin" minlength="6">
+      </div>
+      <button class="btn btn-dark btn-block" [disabled]="!loginForm.valid">Login</button>
+      <div *ngIf="errorMsgLogin" class="mt-4 alert alert-danger" role="alert">
+        {{errorMsgLogin}}
+      </div>
+    </form>
+  </div>
+</div>

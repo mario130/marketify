@@ -1,0 +1,40 @@
+.row{
+  // display: flex;
+  box-sizing: border-box;
+}
+form{
+  width: 400px;
+
+  input{
+    padding: 6px 12px;
+  }
+}
+.part{
+  flex: 1;
+  height: auto;
+  // min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 100px 0;
+  transition: all .3s ease;
+
+  &:hover{
+    background-color: #faf4ed;
+  }
+  .form-group{
+    margin: 1.1875rem 0;
+  }
+  h4{
+    font-size: 1.8rem;
+    color: #484543;
+  }
+}
+.register{
+
+}
+.login{
+
+}
