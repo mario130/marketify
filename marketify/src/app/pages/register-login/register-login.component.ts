@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { User } from './user.model';
 
@@ -12,7 +13,7 @@ export class RegisterLoginComponent implements OnInit {
 
   user: User
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
 
   }
 
@@ -38,6 +39,7 @@ export class RegisterLoginComponent implements OnInit {
     ).subscribe(resp => {
       console.log(resp)
       registerForm.reset()
+      this.router.navigate(['/homepage']);
     }, err => {
       console.log(err);
       this.errorMsgRegister = err.error?.text
@@ -50,7 +52,8 @@ export class RegisterLoginComponent implements OnInit {
 
     this.authService.loginUser(email, password).subscribe(res => {
       console.log(res);
-      // loginForm.reset()
+      loginForm.reset()
+      this.router.navigate(['/homepage']);
     }, err => {
       console.log(err);
       this.errorMsgLogin = err.error?.error

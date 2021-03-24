@@ -54,11 +54,14 @@
       </ul>
     </div>
     <div class="nb-user">
-      <a (click)="login()">
+      <a *ngIf="!user" (click)="login()">
         <i class="fas fa-user-alt"></i>
       </a>
-      <a class="ml-2 d-none d-md-inline" (click)="login()">
+      <a *ngIf="user" class="ml-2 d-none d-md-inline">
         <i class="fas fa-shopping-cart"></i>
+      </a>
+      <a *ngIf="user" class="ml-2 d-none d-md-inline" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i>
       </a>
     </div>
   </div>

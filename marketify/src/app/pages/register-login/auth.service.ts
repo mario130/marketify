@@ -46,4 +46,8 @@ export class AuthService {
       this.user.next(user)
     }))
   }
+
+  logout(){
+    this.user.next(null)
+  }
 }

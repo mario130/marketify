@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/pages/register-login/auth.service';
+import { User } from 'src/app/pages/register-login/user.model';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router:Router) {}
-  ngOnInit(): void {}
+  constructor(private router:Router, private authService: AuthService) {}
 
   isMobileNavOpen: boolean = false;
+  user: User
+
+  ngOnInit(): void {
+    this.authService.user.subscribe(newUser => this.user = newUser)
+  }
+
 
   onOpenCloseNav() {
     this.isMobileNavOpen = !this.isMobileNavOpen;
@@ -25,5 +32,9 @@ export class NavbarComponent implements OnInit {
 
   login(){
     this.router.navigate(['/login']);
+  }
+
+  logout(){
+    this.authService.logout()
   }
 }
