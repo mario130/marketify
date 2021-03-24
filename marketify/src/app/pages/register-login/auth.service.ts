@@ -23,11 +23,13 @@ export class AuthService {
 
   registerUser(fName: string, lName: string, email: string, pw: string){
     return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/register', {
+      // return this.http.post<IAuthResponse>('http://localhost:4001/auth/register', {
       firstName: fName,
       lastName: lName,
       email: email,
       password: pw
     }).pipe(tap(userData => {
+      // console.log(userData)
       const user = new User(userData.user.email, userData.user._id, userData.user.token)
       this.user.next(user)
     }))
@@ -39,7 +41,7 @@ export class AuthService {
       email: email,
       password: pw
     }).pipe(tap(userData => {
-      console.log(userData);
+      // console.log(userData);
       const user = new User(userData.user.email, userData.user._id, userData.user.token)
       this.user.next(user)
     }))

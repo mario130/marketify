@@ -11,7 +11,9 @@ Router.post('/register', async(req, res) => {
   }
 
   const emailExists = await User.findOne({email: req.body.email})
-  if (emailExists) return res.send('email already used!') // guard
+  if (emailExists) return res.json({
+    "error": 'email already used!'
+  }) // guard
   
   // Hash the pw
   const salt = await bcrypt.genSalt(10);
@@ -24,14 +26,17 @@ Router.post('/register', async(req, res) => {
     password: hashedPassword
   })
 
-  newUser.save().then((data)=>res.json({
-    "status": "success",
-    "user": {
-      email: emailExists.email,
-      _id: emailExists._id,
-      token: token
-    }
-  })).catch(err=> res.send(err))
+  newUser.save().then((data)=>{
+    const token = jwt.sign({_id: data._id}, process.env.JWT_SECRET)
+    res.json({
+      "status": "success",
+      "user": {
+        email: req.body.email,
+        _id: data._id,
+        token: token
+      }
+    })
+  }).catch(err=> res.send(err))
 })
 
 Router.post('/login', async (req, res) => {

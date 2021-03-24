@@ -39,7 +39,8 @@ export class RegisterLoginComponent implements OnInit {
       console.log(resp)
       registerForm.reset()
     }, err => {
-      this.errorMsgRegister = err.error.text
+      console.log(err);
+      this.errorMsgRegister = err.error?.text
     })
   }
 
