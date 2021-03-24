@@ -50,4 +50,11 @@ router.put('/:email/update',(req,resp) => {
     })
 })
 
+// GET CART FROM TOKEN
+router.get('/get-my-cart', async(req, res) => { // no need to add email
+  const selectedUser = await User.findOne({_id: req.user._id})
+
+  res.send(selectedUser)
+})
+
 module.exports = router;
