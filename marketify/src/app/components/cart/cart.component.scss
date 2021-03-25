@@ -1,0 +1,25 @@
+.wrapper{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  z-index: 111111111;
+  background: #fff;
+  padding: 10px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2{
+    text-align: center;
+  }
+  ul{
+    list-style-type: none;
+
+    span{
+      color: green;
+    }
+  }
+}

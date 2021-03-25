@@ -12,6 +12,10 @@ interface IAuthResponse {
     cart: [{name: string, price: number}]
   }
 }
+export interface ICart {
+  name: string,
+  price: number
+}
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +26,12 @@ export class AuthService {
 
   // user = new Subject<User>()
   user = new BehaviorSubject<User>(null)
-  cart: [{name: string, price: number}]
+  cart: ICart[]
+  cartObs = new BehaviorSubject<ICart[]>(null)
 
   registerUser(fName: string, lName: string, email: string, pw: string){
-    // return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/register', {
-      return this.http.post<IAuthResponse>('http://localhost:4001/auth/register', {
+    return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/register', {
+      // return this.http.post<IAuthResponse>('http://localhost:4001/auth/register', {
       firstName: fName,
       lastName: lName,
       email: email,
@@ -35,12 +40,13 @@ export class AuthService {
       // console.log(userData)
       const user = new User(userData.user.email, userData.user._id, userData.user.token, userData.user.cart)
       this.user.next(user)
+      this.cart = userData.user.cart
     }))
   }
 
   loginUser(email: string, pw: string){
-    // return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/login', {
-    return this.http.post<IAuthResponse>('http://localhost:4001/auth/login', {
+    return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/login', {
+    // return this.http.post<IAuthResponse>('http://localhost:4001/auth/login', {
       email: email,
       password: pw
     }).pipe(tap(userData => {
@@ -60,5 +66,10 @@ export class AuthService {
       name: item.name,
       price: item.price
     })
+    this.cartObs.next(this.cart)
+  }
+  removeLastItem(){
+    this.cart.pop()
+    this.cartObs.next(this.cart)
   }
 }

@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from './pages/category/category.component';
 import { CategoryProductsComponent } from './components/category-products/category-products.component';
 import { RegisterLoginComponent } from './pages/register-login/register-login.component';
+import { CommonModule } from '@angular/common';
+import { ProductComponent } from './pages/product/product.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,16 @@ import { RegisterLoginComponent } from './pages/register-login/register-login.co
     CategoryComponent,
     CategoryProductsComponent,
     RegisterLoginComponent,
+    ProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

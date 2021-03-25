@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { IProduct } from 'src/app/shared/products';
-import { AuthService } from '../register-login/auth.service';
+import { AuthService, ICart } from '../register-login/auth.service';
 import { User } from '../register-login/user.model';
 import { ProductService } from './product.service';
 declare var $: any;
@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
   prodId: string;
   currentProduct: IProduct;
   user: User
-  // add2CartSuccess = false
+  isAlreadyInCart = false
 
   constructor(private activeRoute: ActivatedRoute, private prodService: ProductService, private authService: AuthService) { }
 
@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     this.activeRoute.paramMap.subscribe((params: ParamMap) => {
       this.prodId = params.get('id')
     })
-    console.log(this.prodId);
+    // console.log(this.prodId);
     this.prodService.productsFetched.subscribe(
       (allProds: IProduct[]) => {
         this.currentProduct = allProds.find(prod => prod._id === this.prodId)
@@ -38,5 +38,10 @@ export class ProductComponent implements OnInit {
     $('.toast').toast('show')
     this.authService.addItemToCart(prod)
     console.log(this.authService.cart);
+    this.isAlreadyInCart = true
+  }
+  removeFromCart(){
+    this.authService.removeLastItem()
+    this.isAlreadyInCart = false
   }
 }
