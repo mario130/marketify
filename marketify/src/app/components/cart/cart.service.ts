@@ -1,19 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { ICart } from 'src/app/pages/register-login/auth.service';
 
+interface IPurchaseResponse {
+  status: string,
+  purchases: ICart[]
+}
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   isShown = false
   isShownObs = new BehaviorSubject<boolean>(false);
 
   cart: ICart[] = []
-  cartObs = new BehaviorSubject<ICart[]>(null)
+  cartObs = new BehaviorSubject<ICart[]>(null);
 
   toggleCart(){
     this.isShown = !this.isShown
@@ -30,5 +36,18 @@ export class CartService {
   removeLastItem(){
     this.cart.pop()
     this.cartObs.next(this.cart)
+  }
+
+  purchase(email: string){
+    console.log('purchasing..');
+    console.log(this.cart);
+    this.http.post<IPurchaseResponse>('http://localhost:4001/api/users/purchase', {
+      itemsToPurchase: this.cart,
+      email
+    }).subscribe(resp => {
+      console.log(resp);
+      this.cart = []
+      this.cartObs.next(this.cart)
+    })
   }
 }

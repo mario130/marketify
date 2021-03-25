@@ -29,8 +29,8 @@ export class AuthService {
 
 
   registerUser(fName: string, lName: string, email: string, pw: string){
-    // return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/register', {
-      return this.http.post<IAuthResponse>('http://localhost:4001/auth/register', {
+    return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/register', {
+      // return this.http.post<IAuthResponse>('http://localhost:4001/auth/register', {
       firstName: fName,
       lastName: lName,
       email: email,
@@ -43,8 +43,8 @@ export class AuthService {
   }
 
   loginUser(email: string, pw: string){
-    // return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/login', {
-    return this.http.post<IAuthResponse>('http://localhost:4001/auth/login', {
+    return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/login', {
+    // return this.http.post<IAuthResponse>('http://localhost:4001/auth/login', {
       email: email,
       password: pw
     }).pipe(tap(userData => {

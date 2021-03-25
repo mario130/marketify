@@ -1,17 +1,28 @@
 <div class="wrapper" *ngIf="isShown">
 <!-- <div class="wrapper"> -->
   <div class="top">
-    <h2>Cart</h2>
+    <div>
+      <h2>Cart</h2>
+      <ul>
+        <li *ngFor="let item of cart">
+          {{item.name}}:
+          <span>
+            ${{item.price}}
+          </span>
+        </li>
+      </ul>
+    </div>
+    <button *ngIf="cart.length > 0" class="btn btn-block btn-success" (click)="purchase()">Buy now!</button>
+  </div>
+  <div class="bottom" *ngIf="pastPurchases.length > 0">
+    <h2>Past purchases</h2>
     <ul>
-      <li *ngFor="let item of cart">
-        {{item.name}}:
+      <li *ngFor="let item of pastPurchases">
+        {{item.name}}
         <span>
           ${{item.price}}
         </span>
       </li>
     </ul>
-  </div>
-  <div class="bottom" *ngIf="cart.length > 0">
-    <button class="btn btn-block btn-success" (click)="purchaseNow()">Buy now!</button>
   </div>
 </div>
