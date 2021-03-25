@@ -34,7 +34,7 @@ Router.post('/register', async(req, res) => {
         email: req.body.email,
         _id: data._id,
         token: token,
-        cart: []
+        purchases: []
       }
     })
   }).catch(err=> res.send(err))
@@ -65,7 +65,7 @@ Router.post('/login', async (req, res) => {
       email: user.email,
       _id: user._id,
       token: token,
-      cart: user.cart
+      purchases: user.purchases
     }
   })
 })

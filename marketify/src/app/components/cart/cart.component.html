@@ -12,6 +12,6 @@
     </ul>
   </div>
   <div class="bottom" *ngIf="cart.length > 0">
-    <button class="btn btn-block btn-success">Buy now!</button>
+    <button class="btn btn-block btn-success" (click)="purchaseNow()">Buy now!</button>
   </div>
 </div>

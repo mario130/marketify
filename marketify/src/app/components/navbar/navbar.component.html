@@ -57,11 +57,11 @@
       <a *ngIf="!user" (click)="login()">
         <i class="fas fa-user-alt"></i>
       </a>
-      <!-- <a *ngIf="user" class="ml-2"> -->
-      <a class="ml-2" (click)="toggleCart()">
+      <a class="ml-2" (click)="toggleCart()" *ngIf="user" >
+      <!-- <a class="ml-2" (click)="toggleCart()"> -->
         <i class="fas fa-shopping-cart"></i>
       </a>
-      <a *ngIf="user" class="ml-2" (click)="logout()">
+      <a class="ml-2" (click)="logout()" *ngIf="user">
         <i class="fas fa-sign-out-alt"></i>
       </a>
     </div>

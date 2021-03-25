@@ -24,7 +24,7 @@ const userSchema = new Schema({
         min: 6,
         max: 1024
     },
-    cart:{
+    purchases:{
         type:Array
     },
     date: {

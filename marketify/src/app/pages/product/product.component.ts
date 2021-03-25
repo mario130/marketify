@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { CartService } from 'src/app/components/cart/cart.service';
 import { IProduct } from 'src/app/shared/products';
 import { AuthService, ICart } from '../register-login/auth.service';
 import { User } from '../register-login/user.model';
@@ -17,7 +18,7 @@ export class ProductComponent implements OnInit {
   user: User
   isAlreadyInCart = false
 
-  constructor(private activeRoute: ActivatedRoute, private prodService: ProductService, private authService: AuthService) { }
+  constructor(private activeRoute: ActivatedRoute, private prodService: ProductService, private authService: AuthService, private cartS: CartService) { }
 
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe((params: ParamMap) => {
@@ -36,12 +37,12 @@ export class ProductComponent implements OnInit {
 
   addToCart = (prod: IProduct) => {
     $('.toast').toast('show')
-    this.authService.addItemToCart(prod)
-    console.log(this.authService.cart);
+    this.cartS.addItemToCart(prod)
+    console.log(this.cartS.cart);
     this.isAlreadyInCart = true
   }
   removeFromCart(){
-    this.authService.removeLastItem()
+    this.cartS.removeLastItem()
     this.isAlreadyInCart = false
   }
 }
