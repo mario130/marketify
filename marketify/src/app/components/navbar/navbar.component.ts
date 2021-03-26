@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goToComponent(category){
+    this.isMobileNavOpen = false
     this.router.navigate(['/category',{category:category}]);
   }
   goHome(){

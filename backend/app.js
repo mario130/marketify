@@ -28,6 +28,7 @@ app.use((req, res, next)=>{
 
 app.use('/auth', authRoutes)
 app.use('/api/products', productsRoutes)
-app.use('/api/users', verifyToken, usersRoutes) // must set auth-token in header
+app.use('/api/users', usersRoutes)
+// app.use('/api/users', verifyToken, usersRoutes) // must set auth-token in header
 
 app.listen(process.env.PORT || PORT, ()=>console.log('Now listening...'))

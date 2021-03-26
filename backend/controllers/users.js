@@ -57,4 +57,17 @@ router.get('/get-my-cart', async(req, res) => { // no need to add email
   res.send(selectedUser)
 })
 
+router.post('/purchase', async(req, res) => {
+  console.log('received a request');
+  const purchases = req.body.itemsToPurchase
+  console.log(purchases);
+  await User.findOneAndUpdate({email: req.body.email}, {$push: {purchases: req.body.itemsToPurchase}})
+  const updatedUser = await User.findOne({email: req.body.email})
+  console.log(updatedUser);
+  res.json({
+    status: "ok",
+    purchases: updatedUser.purchases
+  })
+})
+
 module.exports = router;
