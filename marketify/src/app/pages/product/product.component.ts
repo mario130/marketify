@@ -28,11 +28,21 @@ export class ProductComponent implements OnInit {
     this.prodService.productsFetched.subscribe(
       (allProds: IProduct[]) => {
         this.currentProduct = allProds.find(prod => prod._id === this.prodId)
+
+        //? SUBSCRIPTION INSIDE A SUBSCRIPTION
+        this.cartS.cartObs.subscribe(newCart => {
+          const prodIsInCart = newCart?.some(item => item.name === this.currentProduct?.name)
+          if (prodIsInCart) {
+            this.isAlreadyInCart = true
+          } else {
+            this.isAlreadyInCart = false
+          }
+        })
+
       }
       )
       this.prodService.fetchProds()
     this.authService.user.subscribe(newUser => this.user = newUser);
-
   }
 
   addToCart = (prod: IProduct) => {
