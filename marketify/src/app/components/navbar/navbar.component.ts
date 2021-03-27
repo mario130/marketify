@@ -12,11 +12,13 @@ import { CartService } from '../cart/cart.service';
 export class NavbarComponent implements OnInit {
   constructor(private router:Router, private authService: AuthService, private cartS: CartService) {}
 
-  isMobileNavOpen: boolean = false;
+  isMobileNavOpen = false;
   user: User
+  isCartOpen = false
 
   ngOnInit(): void {
     this.authService.user.subscribe(newUser => this.user = newUser)
+    this.cartS.isShownObs.subscribe(changedState => this.isCartOpen = changedState)
   }
 
 

@@ -12,7 +12,16 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 13px -7px 19px 2px rgb(171 171 171 / 75%);
+  transform: translateX(305px);
+  transition: all .4s;
 
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+
+  &.isOpen{
+    transform: translateX(0);
+  }
 
   .top{
     display: flex;
