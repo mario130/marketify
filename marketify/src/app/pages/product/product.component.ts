@@ -32,11 +32,7 @@ export class ProductComponent implements OnInit {
         //? SUBSCRIPTION INSIDE A SUBSCRIPTION
         this.cartS.cartObs.subscribe(newCart => {
           const prodIsInCart = newCart?.some(item => item.name === this.currentProduct?.name)
-          if (prodIsInCart) {
-            this.isAlreadyInCart = true
-          } else {
-            this.isAlreadyInCart = false
-          }
+          this.isAlreadyInCart = prodIsInCart ? true : false
         })
 
       }
