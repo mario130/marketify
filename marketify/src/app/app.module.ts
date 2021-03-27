@@ -15,6 +15,7 @@ import { RegisterLoginComponent } from './pages/register-login/register-login.co
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './components/cart/cart.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CartComponent } from './components/cart/cart.component';
     CategoryProductsComponent,
     RegisterLoginComponent,
     ProductComponent,
-    CartComponent
+    CartComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

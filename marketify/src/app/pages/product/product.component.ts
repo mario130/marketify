@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
   currentProduct: IProduct;
   user: User
   isAlreadyInCart = false
+  isLoading = true;
 
   constructor(private activeRoute: ActivatedRoute, private prodService: ProductService, private authService: AuthService, private cartS: CartService) { }
 
@@ -35,6 +36,7 @@ export class ProductComponent implements OnInit {
           this.isAlreadyInCart = prodIsInCart ? true : false
         })
 
+        this.isLoading = false
       }
       )
       this.prodService.fetchProds()

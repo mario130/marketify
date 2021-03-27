@@ -12,6 +12,7 @@ export class CategoryComponent implements OnInit {
   productCategory: string;
   productCategoryDescription: string;
   productsToDisplay: IProduct[];
+  isLoading = true;
 
   constructor(private activeRoute: ActivatedRoute, private productService: ProductService) {}
 
@@ -55,6 +56,7 @@ export class CategoryComponent implements OnInit {
     this.productService.productsFetched.subscribe(
       (allProds: IProduct[]) => {
         this.productsToDisplay = allProds.filter(prod => prod.category === this.productCategory)
+        this.isLoading = false
       }
     )
   }

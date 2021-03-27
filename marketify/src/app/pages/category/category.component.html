@@ -6,13 +6,17 @@
     <p class="wrap">{{ productCategoryDescription }}</p>
   </section>
 
-  <div class="row mt-2">
+  <div class="spinner-wrapper my-5" *ngIf="isLoading">
+    <app-loading-spinner class="spinner"></app-loading-spinner>
+  </div>
+
+  <div class="row mt-2" *ngIf="!isLoading">
     <div class="col-md-4" *ngFor="let pro of productsToDisplay">
       <app-category-products [pro]="pro"></app-category-products>
     </div>
   </div>
 
-  <div class="row my-4" style="width: 100%">
+  <div class="row my-4" style="width: 100%" *ngIf="!isLoading">
     <div
       class="col-md-4"
       style="
