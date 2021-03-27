@@ -24,7 +24,8 @@
         padding: 10px 25px;
         margin: auto;
         font-weight: 500;
-        font-family: "GT America Burrow";        ;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 5px;
         cursor: pointer;
         transition: .3s transform;
         &:hover {
@@ -36,9 +37,10 @@
       color: white;
       width: 384px;
       font-size: 35px;
-      font-weight: normal;
+      // font-weight: normal;
       font-family: sans-serif;
       margin: 35px auto;
+      font-family: 'Poppins', sans-serif;
     }
   }
   @media (max-width:768px){
@@ -50,7 +52,12 @@
       .container{
         h2{
           width: 239px;
-          font-size: 20px;
+          font-size: 25px;
+          margin: 115px auto 70px;
+        }
+        & > div {
+          position: static;
+          text-align: left;
         }
       }
     }
