@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { User } from './user.model';
 
 interface IAuthResponse {
@@ -29,7 +30,7 @@ export class AuthService {
 
 
   registerUser(fName: string, lName: string, email: string, pw: string){
-    return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/register', {
+    return this.http.post<IAuthResponse>(environment.apiUrl+'/auth/register', {
       // return this.http.post<IAuthResponse>('http://localhost:4001/auth/register', {
       firstName: fName,
       lastName: lName,
@@ -43,7 +44,7 @@ export class AuthService {
   }
 
   loginUser(email: string, pw: string){
-    return this.http.post<IAuthResponse>('https://marketify-backend.herokuapp.com/auth/login', {
+    return this.http.post<IAuthResponse>(environment.apiUrl+'/auth/login', {
     // return this.http.post<IAuthResponse>('http://localhost:4001/auth/login', {
       email: email,
       password: pw

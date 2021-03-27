@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ICart } from 'src/app/pages/register-login/auth.service';
+import { environment } from 'src/environments/environment';
 
 interface IPurchaseResponse {
   status: string,
@@ -41,7 +42,7 @@ export class CartService {
   purchase(email: string){
     console.log('purchasing..');
     console.log(this.cart);
-    this.http.post<IPurchaseResponse>('http://localhost:4001/api/users/purchase', {
+    this.http.post<IPurchaseResponse>(environment.apiUrl+'/api/users/purchase', {
       itemsToPurchase: this.cart,
       email
     }).subscribe(resp => {

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IProduct } from 'src/app/shared/products';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ProductService {
   productsFetched = new Subject();
   allProducts: IProduct[]
 
-  private url = 'https://marketify-backend.herokuapp.com/api/products'
+  private url = environment.apiUrl+'/api/products'
 
   constructor(private http:HttpClient) { }
 

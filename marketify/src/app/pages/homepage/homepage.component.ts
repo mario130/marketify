@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -24,7 +25,7 @@ sofaList = [
 showMore = false;
 showMoreProduct = false;
 isActive = 0;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
@@ -50,5 +51,8 @@ isActive = 0;
     colors.classList.add('active')
     colors.parentElement.previousElementSibling.setAttribute('src',indexImg)
 
+  }
+  callToAction(){
+    this.router.navigate(['/category',{category:'Tables and Sofas'}]);
   }
 }
