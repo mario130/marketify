@@ -41,14 +41,16 @@ export class ProductComponent implements OnInit {
     this.authService.user.subscribe(newUser => this.user = newUser);
   }
 
-  addToCart = (prod: IProduct) => {
-    $('.toast').toast('show')
-    this.cartS.addItemToCart(prod)
-    console.log(this.cartS.cart);
-    this.isAlreadyInCart = true
-  }
-  removeFromCart(){
-    this.cartS.removeLastItem()
-    this.isAlreadyInCart = false
+  toggleItemInCart(prod: IProduct){
+    console.log('cartS cart'+this.cartS.cart);
+    if (this.cartS.cart.some(prodInCart => prodInCart.name === prod.name)){
+      this.cartS.removeLastItem()
+      this.isAlreadyInCart = false
+    } else {
+      $('.toast').toast('show')
+      this.cartS.addItemToCart(prod)
+      // console.log(this.cartS.cart);
+      this.isAlreadyInCart = true
+    }
   }
 }

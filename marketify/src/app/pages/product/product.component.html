@@ -25,9 +25,8 @@
       <div class="title mt-2 mb-4">{{currentProduct?.name}}</div>
       <div class="price mb-3">${{currentProduct?.price}}</div>
       <p>Color: {{currentProduct?.variations[0].color}}</p>
-      <!-- <button class="btn btn-warning btn-block" (click)="addToCart(currentProduct)">Add to cart</button> -->
-      <button *ngIf="!isAlreadyInCart" class="btn btn-warning btn-block" [disabled]="!user" (click)="addToCart(currentProduct)">Add to cart</button>
-      <button *ngIf="isAlreadyInCart" class="btn btn-danger btn-block" [disabled]="!user" (click)="removeFromCart()">Remove to cart</button>
+      <button class="btn btn-block" [disabled]="!user" (click)="toggleItemInCart(currentProduct)" [ngClass]="{'btn-danger': isAlreadyInCart === true, 'btn-warning':isAlreadyInCart === false }" >{{isAlreadyInCart ? 'Remove from' : 'Add to'}} cart</button>
+      <p class="text-right font-italic"><small>{{!user ? 'Please login first!' : ''}}</small></p>
     </div>
 
     <div class="container">
