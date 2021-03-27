@@ -30,5 +30,6 @@ export class CartComponent implements OnInit {
     console.log(this.cart);
     this.pastPurchases = this.pastPurchases.concat(this.cart)
     this.cartS.purchase(this.user.email)
+    this.authS.updatePurchasesForLoggedInUser(this.pastPurchases)
   }
 }
