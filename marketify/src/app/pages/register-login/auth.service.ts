@@ -43,6 +43,7 @@ export class AuthService {
       // console.log(userData)
       const user = new User(userData.user.email, userData.user._id, userData.user.token, userData.user.purchases)
       this.user.next(user)
+      localStorage.setItem('marketify-user', JSON.stringify(user))
     }))
   }
 

@@ -15,6 +15,7 @@
     <button *ngIf="cart?.length > 0" class="btn btn-block btn-success" (click)="purchase()">Buy now!</button>
   </div>
   <div class="bottom" *ngIf="pastPurchases?.length > 0">
+    <hr>
     <h2>Past purchases</h2>
     <ul>
       <li *ngFor="let item of pastPurchases">

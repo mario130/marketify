@@ -21,26 +21,37 @@ export class NavbarComponent implements OnInit {
 
 
   onOpenCloseNav() {
+    this.closeCart()
     this.isMobileNavOpen = !this.isMobileNavOpen;
   }
 
   goToComponent(category){
+    this.closeCart()
     this.isMobileNavOpen = false
     this.router.navigate(['/category',{category:category}]);
   }
   goHome(){
+    this.closeCart()
     this.router.navigate(['/homepage']);
   }
 
   login(){
+    this.closeCart()
     this.router.navigate(['/login']);
   }
 
   logout(){
+    this.closeCart()
     this.authService.logout()
   }
 
   toggleCart(){
     this.cartS.toggleCart()
+  }
+
+  closeCart(){
+    if (this.cartS.isShown === true){
+      this.cartS.toggleCart()
+    }
   }
 }

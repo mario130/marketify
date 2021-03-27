@@ -4,7 +4,7 @@ nav{
   color: #484543;
   position: sticky;
   top: 0;
-  z-index: 1003;
+  z-index: 111111110;
   background-color: #fff;
 }
 
@@ -23,6 +23,11 @@ nav{
     display: inline;
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
+  }
+  .nb-user,
+  .nb-user a,
+  .nb-user a i{
+    z-index: 111111112;
   }
 }
 
