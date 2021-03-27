@@ -20,7 +20,7 @@
     <app-loading-spinner class="spinner"></app-loading-spinner>
   </div>
 
-  <p *ngIf="!isLoading" class="ml-3">{{currentProduct?.category}}</p>
+  <p *ngIf="!isLoading" class="ml-3">Listed in <b>{{currentProduct?.category}}</b></p>
   <div *ngIf="!isLoading" class="row my-3">
     <div class="col-md-8">
       <img [src]="currentProduct?.variations[0].imageUrl" alt="" class="prod-img">

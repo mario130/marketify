@@ -46,13 +46,11 @@ export class ProductComponent implements OnInit {
   toggleItemInCart(prod: IProduct){
     console.log('cartS cart'+this.cartS.cart);
     if (this.cartS.cart.some(prodInCart => prodInCart.name === prod.name)){
-      // this.cartS.removeLastItem()
       this.cartS.removeItemFromCart(prod)
       this.isAlreadyInCart = false
     } else {
       $('.toast').toast('show')
       this.cartS.addItemToCart(prod)
-      // console.log(this.cartS.cart);
       this.isAlreadyInCart = true
       this.cartS.openCart()
     }
