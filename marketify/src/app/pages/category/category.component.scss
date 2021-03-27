@@ -1,3 +1,6 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
 .selector {
   position: relative;
   cursor: pointer;
@@ -32,9 +35,6 @@ a {
 // }
 
 p {
-  font-family: Neuzeit S LT W01 Book;
-  font-size: .8125rem;
-  line-height: 1.125rem;
   letter-spacing: 0;
 }
 
@@ -46,6 +46,10 @@ p {
   flex-direction: column;
   justify-content: space-evenly;
   justify-content: flex-end;
+  color: #484543;
+
+  h2{
+  }
 }
 
 

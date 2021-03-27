@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { ProductService } from 'src/app/pages/product/product.service';
 import { IProduct } from 'src/app/shared/products';
 
@@ -14,7 +14,7 @@ export class CategoryComponent implements OnInit {
   productsToDisplay: IProduct[];
   isLoading = true;
 
-  constructor(private activeRoute: ActivatedRoute, private productService: ProductService) {}
+  constructor(private activeRoute: ActivatedRoute, private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe((params: ParamMap) => {
@@ -61,4 +61,7 @@ export class CategoryComponent implements OnInit {
     )
   }
 
+  callToAction(){
+    this.router.navigate(['/category',{category:'Tables and Sofas'}]);
+  }
 }
