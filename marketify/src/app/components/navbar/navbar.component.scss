@@ -17,6 +17,10 @@ nav{
     font-size: 1.2rem;
     font-family: 'Courgette', cursive;
     cursor: pointer;
+
+    background: -webkit-linear-gradient(#85ccff4d, #114b74);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   a, li{
     color: #484543;
