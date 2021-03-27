@@ -38,8 +38,8 @@ export class CartService {
     })
     this.cartObs.next(this.cart)
   }
-  removeLastItem(){
-    this.cart.pop()
+  removeItemFromCart(prod){
+    this.cart = this.cart.filter(item => item.name !== prod.name)
     this.cartObs.next(this.cart)
   }
 
