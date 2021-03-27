@@ -31,6 +31,7 @@ export class AuthService {
   // user = new Subject<User>()
   user = new BehaviorSubject<User>(null)
   currentUser
+  isInProduction = environment.production
 
 
   registerUser(fName: string, lName: string, email: string, pw: string){

@@ -59,8 +59,8 @@
         <li class="list-header"><a href="#">Get in Touch</a></li>
         <li><a href="#">support@marketify.com</a></li>
         <li><a href="#">Blog</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#createProductModal" style="color: gold;">Create product</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#showProductsModal" style="color: gold;">Show products</a></li>
+        <li><a *ngIf="!isProd" href="#" data-toggle="modal" data-target="#createProductModal" style="color: gold;">Create product</a></li>
+        <li><a *ngIf="!isProd" href="#" data-toggle="modal" data-target="#showProductsModal" style="color: gold;">Show products</a></li>
       </ul>
     </div>
 
@@ -145,7 +145,6 @@
             <ul>
               <li><a href="#">support@marketify.com</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#showProductsModal" style="color: gold;">Show products</a></li>
             </ul>
           </div>
         </div>
