@@ -26,6 +26,10 @@ export class CartService {
     this.isShown = !this.isShown
     this.isShownObs.next(this.isShown)
   }
+  openCart(){
+    this.isShown = true
+    this.isShownObs.next(this.isShown)
+  }
 
   addItemToCart(item){
     this.cart.push({

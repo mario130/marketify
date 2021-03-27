@@ -51,6 +51,7 @@ export class ProductComponent implements OnInit {
       this.cartS.addItemToCart(prod)
       // console.log(this.cartS.cart);
       this.isAlreadyInCart = true
+      this.cartS.openCart()
     }
   }
 }
